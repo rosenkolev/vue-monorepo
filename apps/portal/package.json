@@ -1,0 +1,24 @@
+{
+  "name": "portal",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@repo/ui": "workspace:*"
+  },
+  "peerDependencies": {
+    "@primeuix/themes": "^2.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vitest/browser": "^4.0.0",
+    "primevue": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^7.0.0",
+    "vitest": "^4.0.0",
+    "vue": "^3.0.0"
+  }
+}
