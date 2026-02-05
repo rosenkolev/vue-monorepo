@@ -18,6 +18,9 @@ const config: StorybookConfig = {
       docgen: 'vue-component-meta',
     },
   },
+  core: {
+    disableTelemetry: true,
+  },
   viteFinal: async (config) => {
     return {
       ...config,

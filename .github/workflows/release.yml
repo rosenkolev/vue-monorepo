@@ -39,14 +39,14 @@ jobs:
         run: pnpm run lint
       - name: Run spellchecker
         run: npx -y cspell .
-      - name: Install Playwright with Chrome
-        run: npx playwright install chromium --with-deps --only-shell
-      - name: Run tests
-        run: pnpm run test:coverage
       - name: Build App
         run: pnpm run build
         env:
           APP_BASE_URL: /vue-monorepo/
+      - name: Install Playwright with Chrome
+        run: npx playwright install chromium --with-deps --only-shell
+      - name: Run tests
+        run: pnpm run test:coverage
       - name: Build storybook
         run: pnpm run build-storybook
       - run: |
