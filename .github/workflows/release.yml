@@ -48,7 +48,7 @@ jobs:
       - name: Run tests
         run: pnpm run test:coverage
       - name: Build storybook
-        run: pnpm run build-storybook
+        run: pnpm run storybook-build
       - run: |
           rm -rf ./dist
           mv ./apps/portal/dist ./dist/

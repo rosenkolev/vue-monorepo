@@ -12,7 +12,6 @@ export function folderAsAlias(basePath: string, prefix: string, folder: string) 
 const rmLast = (str: string) => str.substring(0, str.length - 1)
 export function getAliasFromTsConfig(tsConfigPath: string) {
   const basePath = dirname(tsConfigPath)
-  console.log('basePath', basePath)
   const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf-8'))
   const paths = tsConfig.compilerOptions.paths as Record<string, string[]>
   const alias = Object.fromEntries(
@@ -26,8 +25,6 @@ export function getAliasFromTsConfig(tsConfigPath: string) {
       }
     })
   )
-
-  console.log('alias', alias)
 
   return alias
 }
