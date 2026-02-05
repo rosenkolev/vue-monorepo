@@ -12,6 +12,8 @@ type Story = StoryObj<typeof Input>
 
 export const Default: Story = {
   args: {
+    label: 'Input label',
+    placeholder: 'Input placeholder',
     modelValue: 'Initial text',
   },
   play: async ({ canvas, userEvent }) => {

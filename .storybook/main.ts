@@ -1,9 +1,5 @@
-import type { StorybookConfig } from '@storybook/vue3-vite';
-import { resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import type { StorybookConfig } from '@storybook/vue3-vite'
+import { getAliasFromTsConfig } from '../vite-alias.ts'
 
 const config: StorybookConfig = {
   stories: [
@@ -16,18 +12,21 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
   ],
-  framework: '@storybook/vue3-vite',
+  framework: {
+    name: '@storybook/vue3-vite',
+    options: {
+      docgen: 'vue-component-meta',
+    },
+  },
   viteFinal: async (config) => {
     return {
       ...config,
       resolve: {
-        alias: {
-          '@repo/ui': resolve(__dirname, '../packages/ui/src/index.ts'),
-          vue: resolve(__dirname, '../node_modules/vue'),
-        },
+        ...config.resolve,
+        alias: getAliasFromTsConfig('tsconfig.base.json'),
       },
-    };
+    }
   },
-};
+}
 
-export default config;
+export default config

@@ -1,6 +1,12 @@
 <script setup lang="ts">
 defineProps<{
+  /**
+   * The label of the button.
+   */
   label?: string
+  /**
+   * Whether the button is primary.
+   */
   primary?: boolean
 }>()
 </script>
@@ -19,10 +25,11 @@ defineProps<{
   cursor: pointer;
   background-color: white;
   font-size: 1rem;
+  color: #000;
 }
 .custom-button.primary {
-  background-color: #007bff;
+  background-color: #004b8f;
   color: white;
-  border-color: #007bff;
+  border-color: #002b5f;
 }
 </style>

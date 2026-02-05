@@ -1,20 +1,21 @@
 {
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "tsconfig.json": "tsconfig.*.json, env.d.ts",
-    "vite.config.*": "jsconfig*, vitest.config.*, vitest.shims.*, cypress.config.*, playwright.config.*",
-    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .prettier*, prettier*, .editorconfig"
-  },
-  "files.exclude": {
-    "**/node_modules": true,
-    "**/.turbo": true
+  "[json]": {
+    "prettier.tabWidth": 2
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[json]": {
-    "prettier.tabWidth": 2
+  "editor.formatOnSave": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "eslint.config.ts": ".eslintcache, .prettier*",
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .oxlint*, oxlint*",
+    "tsconfig.json": "tsconfig.*.json, env.d.ts",
+    "vite.config.*": "jsconfig*, vitest.config.*, vitest.shims.*, cypress.config.*, playwright.config.*"
+  },
+  "files.exclude": {
+    "**/.turbo": true,
+    "**/node_modules": true
   }
 }

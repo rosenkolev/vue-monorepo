@@ -40,6 +40,7 @@ export default defineConfigWithVueTs(
       'vue/multi-word-component-names': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'storybook/no-uninstalled-addons': 'warn',
     },
   },
 

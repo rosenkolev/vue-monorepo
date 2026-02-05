@@ -31,7 +31,7 @@ const checkboxOptions = [
     <main>
       <section>
         <h2>Input</h2>
-        <Input v-model="inputValue" />
+        <Input label="Input" v-model="inputValue" />
         <p>Value: {{ inputValue }}</p>
       </section>
       <section>
