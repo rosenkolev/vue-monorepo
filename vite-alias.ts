@@ -12,17 +12,22 @@ export function folderAsAlias(basePath: string, prefix: string, folder: string) 
 const rmLast = (str: string) => str.substring(0, str.length - 1)
 export function getAliasFromTsConfig(tsConfigPath: string) {
   const basePath = dirname(tsConfigPath)
+  console.log('basePath', basePath)
   const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf-8'))
   const paths = tsConfig.compilerOptions.paths as Record<string, string[]>
-  const alias = Object.entries(paths).flatMap(([key, value]) => {
-    if (!key || !value) {
-      return []
-    } else if (!key.endsWith('/*')) {
-      return [[key, value[0]]]
-    } else {
-      return folderAsAlias(basePath, rmLast(key), rmLast(value[0] as string))
-    }
-  })
+  const alias = Object.fromEntries(
+    Object.entries(paths).flatMap(([key, value]) => {
+      if (!key || !value) {
+        return []
+      } else if (!key.endsWith('/*')) {
+        return [[key, value[0]]]
+      } else {
+        return folderAsAlias(basePath, rmLast(key), rmLast(value[0] as string))
+      }
+    })
+  )
 
-  return Object.fromEntries(alias)
+  console.log('alias', alias)
+
+  return alias
 }
