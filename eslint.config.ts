@@ -2,7 +2,7 @@ import storybook from 'eslint-plugin-storybook'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import { globalIgnores } from 'eslint/config'
 import pluginVue from 'eslint-plugin-vue'
-import tseslint from 'typescript-eslint'
+import tsEsLint from 'typescript-eslint'
 import prettierSkipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 import pluginVitest from '@vitest/eslint-plugin'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
@@ -22,7 +22,7 @@ export default defineConfigWithVueTs(
     '.turbo/**',
   ]),
   ...pluginVue.configs['flat/essential'],
-  ...tseslint.configs.recommended,
+  ...tsEsLint.configs.recommended,
   vueTsConfigs.recommended,
   ...storybook.configs['flat/recommended'],
   prettierSkipFormatting,

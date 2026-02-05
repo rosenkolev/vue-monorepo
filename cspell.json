@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaries": [
+    "typescript",
+    "node",
+    "html",
+    "css",
+    "vue"
+  ],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "build/**",
+    "coverage/**",
+    "package-lock.json",
+    "pnpm-lock.yaml"
+  ],
+  "words": [
+    "autodocs",
+    "testid",
+    "vite",
+    "primeuix",
+    "primevue",
+    "turborepo"
+  ]
+}
